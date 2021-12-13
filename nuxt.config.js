@@ -2,6 +2,8 @@ import colors from 'vuetify/es5/util/colors'
 
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
+  publicPath: '/free',
+  outputDir: 'docs',
   head: {
     titleTemplate: '%s - nuxtProject',
     title: 'nuxtProject',
