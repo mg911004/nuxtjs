@@ -12,7 +12,9 @@
                 <input v-model="제목" class="input is-primary" type="text" placeholder="제목">
             </div>          
         
-            <div class="mt-2" id="editor"></div>
+        	<no-ssr>
+            <editor height="500px" initialEditType="wysiwyg" :options="Options" ref="내용"/>
+            </no-ssr>
 
             <div class="buttons mt-3" style="float: right;">
                 <button class="button is-light">취소</button>
@@ -24,38 +26,20 @@
 
 <script>
     const mymixin = require('~/mixins/total.js'); 
-   /*
-    const Editor = toastui.Editor;
-
-    const editor = new Editor({
-        el: document.querySelector('#editor'),
-        height: '580px',
-        initialEditType: 'wysiwyg',
-        previewStyle: 'vertical'
-    });
-    */
-
     export default {  
-        head() { 
-            return {			
-                script: [
-                    { src: "https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js" }
-                ],				
-                link: [
-                    { rel: 'stylesheet', href: 'https://uicdn.toast.com/editor/latest/toastui-editor.min.css' }
-                ], 
-            }
-        },
         name: 'write',
         mixins: [mymixin],
-        data : function(){		
+        data(){		
             return {	
                 분류:"자유",
                 제목:"",
-                내용:""
+                내용:"",
+                Options: {
+				    language : "ko"
+			    },
             }
         },
-        created : async function(){		
+        async created(){		
             
         },    
         computed : {
@@ -63,7 +47,8 @@
         }, 
         methods : {	
             글등록 (){
-        
+                //this.$refs.내용.invoke('getMarkdown')
+                //insert axios코드 작성
             }
         },
         watch : {

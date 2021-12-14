@@ -2,8 +2,6 @@ import colors from 'vuetify/es5/util/colors'
 
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
-  publicPath: '/free',
-  outputDir: 'docs',
   head: {
     titleTemplate: '%s - nuxtProject',
     title: 'nuxtProject',
@@ -28,7 +26,8 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    '@/plugins/plugins.js'
+    '@/plugins/plugins.js',
+    {src:'@/plugins/tui-editor.js', ssr:false}
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

@@ -25,25 +25,9 @@
                 </thead>
 
                 <tbody>
-                    <tr @click="경로이동()">
+                    <tr @click="경로이동()" style="cursor:pointer">
                         <th>1</th>
                         <td>안녕하세요2</td>
-                        <td>38</td>
-                        <td>23</td>                    
-                    </tr>
-                    <tr>
-                        <th>2</th>
-                        <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C."
-                                title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong>
-                        </td>
-                        <td>38</td>
-                        <td>23</td>                    
-                    </tr>
-                    <tr>
-                        <th>3</th>
-                        <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C."
-                                title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong>
-                        </td>
                         <td>38</td>
                         <td>23</td>                    
                     </tr>
@@ -81,22 +65,19 @@
                 페이지: 1,
                 버튼모음 : ''
             }
-        },
-        created : async function(){		
-            
-        },    
+        }, 
         computed : {
                 
         }, 
         methods : {	
             버튼색 (val){
-                const sort = this.$route.query.sort;
-                if(sort==val){
+                this.정렬 = this.$route.query.sort ? this.$route.query.sort : 'hot';
+                if(this.정렬==val){
                     return "background-color: #00D1B2; color: #fff";
                 }
             },
             경로이동(){
-                this.페이지이동("view?id_no=1&s_class="+this.게시판종류+"&sort="+this.정렬+"&page=1");
+                this.페이지이동("view?id_no=1&category="+this.게시판종류+"&sort="+this.정렬+"&page=1");
             },
             리스트정렬(val){
                 this.라우터이동(window.location.pathname , {sort: val});

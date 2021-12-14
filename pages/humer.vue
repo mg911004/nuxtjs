@@ -70,7 +70,6 @@
 </template>
 
 <script>
-
     const mymixin = require('~/mixins/total.js'); 
     export default {  
         name: 'humer',
@@ -84,32 +83,18 @@
             }
         },
         created : async function(){		
-            
+            if(this.$route.query.sort){  //정렬있음
+				this.정렬=this.$route.query.sort;
+			}else{ //정렬없음
+				this.정렬='hot';	 
+			}
         },    
         computed : {
                 
         }, 
         methods : {	
-            async 보내기 (){
-
-                /*
-                axios.post('http://localhost:8081/JavaquaServlet?command=member_info&user_id=testid')
-                .then(res=>{
-                    console.log(res.data);
-                })
-                .catch(err=>{
-                    alert("오류가 발생했습니다.");
-                    console.log(err);
-                });
-    
-                    */
-				let axios = await this.$axios.get( 'http://localhost:5000/sel');
-                console.log(axios);	
-				console.log(axios.data);				
-            },
             버튼색 (val){
-                const sort = this.$route.query.sort;
-                if(sort==val){
+                if(this.정렬==val){
                     return "background-color: #00D1B2; color: #fff";
                 }
             },

@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.13.6",
+    "@toast-ui/vue-editor": "^2.5.4",
     "axios": "^0.24.0",
     "bulma": "^0.9.3",
     "core-js": "^3.15.1",
