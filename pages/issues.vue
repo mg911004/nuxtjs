@@ -76,7 +76,7 @@
         mixins: [mymixin],
         data : function(){		
             return {	
-                게시판종류 : "이슈",
+                게시판종류 : "이슈게시판",
                 정렬 : "",
                 페이지: 1,
                 버튼모음 : ''
