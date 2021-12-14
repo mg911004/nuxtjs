@@ -99,7 +99,7 @@
                 }
             },
             경로이동(){
-                this.페이지이동("view?id_no=1&s_class="+this.게시판종류+"&sort="+this.정렬+"&page=1");
+                this.페이지이동("view?id_no=1&category="+this.게시판종류+"&sort="+this.정렬+"&page=1");
             },
             리스트정렬(val){
                 this.라우터이동(window.location.pathname , {sort: val});
