@@ -50,7 +50,7 @@
                 </tbody>
             </table>                           
         </div>
-        <v-pagination v-model="페이지" :length="7" color="#FFAB00" class="mb-2"></v-pagination>	
+
 
         
         <nav class="pagination is-centered mt-5" role="navigation" aria-label="pagination">

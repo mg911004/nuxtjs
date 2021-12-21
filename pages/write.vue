@@ -13,7 +13,7 @@
             </div>          
         
         	<no-ssr>
-            <editor height="500px" initialEditType="wysiwyg" :options="Options" ref="내용"/>
+                <editor height="500px" initialEditType="wysiwyg" :options="Options" ref="내용"/>
             </no-ssr>
 
             <div class="buttons mt-3" style="float: right;">
@@ -46,9 +46,26 @@
                 
         }, 
         methods : {	
-            글등록 (){
-                //this.$refs.내용.invoke('getMarkdown')
-                //insert axios코드 작성
+            async 글등록 (){
+                if(!this.유저아이디){this.페이지이동("login");return;}
+                if(!this.분류){alert('분류를 선택해 주세요.'); return}
+                if(!this.제목){alert('제목을 입력해 주세요.'); return}
+                if(!this.$refs.내용.invoke('getMarkdown')){alert('내용을 입력해 주세요.'); return}
+
+                let param={        
+                    'id':this.유저아이디,
+                    'nickname':this.유저닉네임,   
+                    'category':this.분류,
+                    'subject':this.제목,
+                    'content':this.$refs.내용.invoke('getMarkdown')
+                }
+                let axios = await this.$axios.post( '/write',this.$qs.stringify(param));
+                if(axios.data.code==200){
+                    this.라우터이동('view', {id_no:axios.data.bd_no,category:this.분류} );
+                }else{
+                    console.log(axios.data.msg)
+                    alert("오류가 발생했습니다.");              
+                }
             }
         },
         watch : {
