@@ -12,9 +12,7 @@
                 <input v-model="제목" class="input is-primary" type="text" placeholder="제목">
             </div>          
         
-        	<no-ssr>
-                <editor height="500px" initialEditType="wysiwyg" :options="Options" ref="내용"/>
-            </no-ssr>
+            <editor height="500px" initialEditType="wysiwyg" :options="Options" ref="내용"/>
 
             <div class="buttons mt-3" style="float: right;">
                 <button class="button is-light">취소</button>

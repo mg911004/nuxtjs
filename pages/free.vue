@@ -19,13 +19,13 @@
                     <tr>
                         <th style="width: 4rem;">추천</th>
                         <th>제목</th>
-                        <th>작성자</th>
-                        <th><abbr>등록일</abbr></th>
+                        <th style="width: 8rem;">작성자</th>
+                        <th style="width: 13rem;">등록일</th>
                     </tr>
                 </thead>
 
                 <tbody>
-                    <tr @click="해당글이동()" style="cursor:pointer"  v-for="(item,i) in 데이터" :key="i">
+                    <tr @click="해당글이동(item.BD_NO)" style="cursor:pointer"  v-for="(item,i) in 데이터" :key="i">
                         <th>1</th>
                         <td>{{item.SUBJECT}}</td>
                         <td>{{item.NICKNAME}}</td>
@@ -45,7 +45,7 @@
         mixins: [mymixin],
         data : function(){		
             return {	
-                게시판종류 : "free",
+                게시판종류 : "자유",
                 정렬 : "hot",
                 데이터 : "",
                 데이터수:0,
@@ -74,12 +74,12 @@
                 this.정렬 = val;
                 //this.라우터이동(window.location.pathname.slice(1) , {sort: this.정렬});
             },  
-            해당글이동(){
-                this.라우터이동("view?id_no=1&category="+this.게시판종류+"&sort="+this.정렬+"&page=1");
+            해당글이동(bd_no){
+                this.라우터이동("view?bd_no="+bd_no+"&category="+this.게시판종류+"&sort="+this.정렬+"&page="+this.페이지);
             },        
             async 데이터가져오기(){
                 const param={
-                    'category' : window.location.pathname.slice(1),
+                    'category' : this.게시판종류,
                     'page' : this.페이지,
                     'sort' : this.정렬,
                     'listNumber' : process.env.listNumber
