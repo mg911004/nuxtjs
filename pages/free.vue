@@ -29,7 +29,7 @@
                         <th>1</th>
                         <td>{{item.SUBJECT}}</td>
                         <td>{{item.NICKNAME}}</td>
-                        <td>{{item.REG_DATE}}</td>                    
+                        <td>{{item.REG_DATE | 시간표시변환}}</td>                    
                     </tr>
                 </tbody>
             </table>                           

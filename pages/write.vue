@@ -59,7 +59,7 @@
                 }
                 let axios = await this.$axios.post( '/write',this.$qs.stringify(param));
                 if(axios.data.code==200){
-                    this.라우터이동('view', {id_no:axios.data.bd_no,category:this.분류} );
+                    this.라우터이동('view', {bd_no:axios.data.bd_no,category:this.분류} );
                 }else{
                     console.log(axios.data.msg)
                     alert("오류가 발생했습니다.");              

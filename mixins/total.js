@@ -1,3 +1,6 @@
+const numeral = require('numeral');
+const moment = require('moment');
+
 module.exports = {  
     data : function(){		
         return {	
@@ -40,9 +43,36 @@ module.exports = {
             }else{
                 alert("오류가 발생했습니다.");
             }  
-        }
+        },
     },
-    watch : {
-
+    filters :{
+        콤마표시(value){
+			return numeral(value).format('0,0');
+        },
+        시간표시변환(val){
+            let betweenTime = moment.duration(moment().diff(val));
+				
+            if(betweenTime.asHours() > 1){  // 1시간 기준
+                if(betweenTime.asDays() > 1){  // 24시간 기준
+                    if(betweenTime.asYears() >1){ // 365일 기준
+                        return Math.floor( betweenTime.asYears() )+"년 전";
+                    }else{
+                        return Math.floor( betweenTime.asDays() )+"일 전";
+                    }
+                }else{ 
+                    return Math.floor( betweenTime.asHours() )+"시간 전";
+                }	
+            }else{ 
+                if(betweenTime.asMinutes() > 1){ // 1분 기준
+                    return Math.floor( betweenTime.asMinutes() )+"분 전";
+                }else{
+                    if(betweenTime.asSeconds() < 1){
+                        return "1초 전";
+                    }else{
+                        return Math.floor( betweenTime.asSeconds() )+"초 전";
+                    }
+                }			
+            }		
+        }
     }
 }
