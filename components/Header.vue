@@ -11,7 +11,11 @@
                 </a>
             </div>
         
-            <div id="navbarBasicExample" class="navbar-menu">        
+            <div id="navbarBasicExample" class="navbar-menu">
+                 <div class="navbar-start">
+                    <a class="navbar-item">Home</a>
+                 </div>
+
                 <div class="navbar-end">  
                     <div class="navbar-item">
                         <div class="buttons">
@@ -21,6 +25,7 @@
                         </div>
                     </div>
                 </div>
+                
             </div>
         </nav>
     </div>

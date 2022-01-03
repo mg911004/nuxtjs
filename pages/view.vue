@@ -14,6 +14,12 @@
                         <span>조회 {{등록글정보.HITS | 콤마표시}}</span> <span class="divide_line"></span> <span>댓글 {{등록글정보.COMMENTS | 콤마표시}}</span> <span class="divide_line"></span> <span>추천 {{등록글정보.GETS | 콤마표시}}</span>
                     </span>    
                 </div>
+
+                <!---수정,삭제버튼--->
+                <div v-if="유저아이디==등록글정보.ID">
+                    <button class="button is-small is-outlined" @click="라우터이동('modify?bd_no='+등록글정보.BD_NO)">수정</button>    
+                    <button class="button is-danger is-small is-outlined" @click="글삭제()">삭제</button>
+                </div> 
             </div>
 
             <div class="card-content">
@@ -136,13 +142,8 @@
                     'id' : this.유저아이디,
                     'ip' : ip
                 }
-               const axios2 = await this.$axios.post( '/hitsUp',this.$qs.stringify(param)); 
-                if(axios2.data.code==200){
-                    
-                }else{
-                    alert("오류가 발생했습니다.");
-                    console.log(axios2.data.err)
-                }    
+               await this.$axios.post( '/hitsUp',this.$qs.stringify(param)); 
+  
             },
             async 데이터가져오기(){
                 const param={
@@ -154,7 +155,7 @@
                     this.등록글정보 = axios.data.dbo;
                     this.댓글정보 = axios.data.reply;
                     this.계정당추천개수 = axios.data.id_recomm;
-                    this.즐겨찾기체크=axios.data.bookmark;                
+                    this.즐겨찾기체크=axios.data.bookmark;             
                 }else{
                     alert("오류가 발생했습니다.");
                 }     
@@ -231,6 +232,21 @@
                     if(axios.data.code==200){
                         alert("삭제되었습니다.");
                         this.데이터가져오기();
+                    }else{
+                        alert("오류가 발생했습니다.");
+                    }   
+                }
+            },
+            async 글삭제(){
+                if(confirm('삭제하시겠습니까?')){
+                    const param={
+                        'id' : this.유저아이디,
+                        'bd_no' : this.$route.query.bd_no
+                    }
+                    const axios = await this.$axios.post( '/delete',this.$qs.stringify(param));
+                    if(axios.data.code==200){
+                        alert("삭제되었습니다.");
+                        this.라우터이동("free");
                     }else{
                         alert("오류가 발생했습니다.");
                     }   

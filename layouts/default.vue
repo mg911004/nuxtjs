@@ -1,7 +1,7 @@
 <template>
-    <div>
+    <div style=" position: relative;">
         <Header/>
-        <section class="section">
+        <section class="section" style="min-height: 800px;">
             <div class="container">
                 <div class="columns">
                     <div class="column is-3 is-hidden-touch">
@@ -16,8 +16,3 @@
         <Footer/>
     </div>
 </template>
-
-<script>
-    //import 'bulma/css/bulma.css'
-    //require('bulma/css/bulma.css');
-</script>

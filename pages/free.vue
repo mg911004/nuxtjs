@@ -25,7 +25,7 @@
                 </thead>
 
                 <tbody>
-                    <tr @click="해당글이동(item.BD_NO)" style="cursor:pointer"  v-for="(item,i) in 데이터" :key="i">
+                    <tr @click="라우터이동('view?bd_no='+item.BD_NO)" style="cursor:pointer"  v-for="(item,i) in 데이터" :key="i">
                         <th>1</th>
                         <td>{{item.SUBJECT}}</td>
                         <td>{{item.NICKNAME}}</td>
@@ -54,6 +54,7 @@
         }, 
         async created (){
             if (process.client) {
+                this.정렬 = this.$route.query.sort ? this.$route.query.sort : 'hot';
                 this.데이터가져오기();
             }
         },
@@ -71,11 +72,8 @@
                 }
             },
             리스트정렬(val){
-                this.정렬 = val;
-                //this.라우터이동(window.location.pathname.slice(1) , {sort: this.정렬});
-            },  
-            해당글이동(bd_no){
-                this.라우터이동("view?bd_no="+bd_no+"&category="+this.게시판종류+"&sort="+this.정렬+"&page="+this.페이지);
+                this.정렬 = val;            
+                this.라우터이동(window.location.pathname.slice(1) , {sort: this.정렬});
             },        
             async 데이터가져오기(){
                 const param={
