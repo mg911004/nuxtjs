@@ -71,7 +71,7 @@
                 }
             },
             리스트정렬(val){
-                alert(window.location.pathname.slice(1))
+                alert("업뎃");
                 this.정렬 = val;            
                 this.라우터이동(window.location.pathname.slice(1) , {sort: this.정렬});
             },        
