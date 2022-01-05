@@ -28,10 +28,8 @@
 
 <script>
     const mymixin = require('~/mixins/total.js'); 
-    export default {  
-        mixins: [mymixin],
-        methods : {	
 
-        }
+    export default {  
+        mixins: [mymixin]
     }
 </script>

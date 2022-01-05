@@ -48,12 +48,6 @@
                 닉네임 : "",
             }
         },
-        created : async function(){		
-            
-        },    
-        computed : {
-                
-        }, 
         methods : {	
             async 회원가입 (){
                 if(this.아이디==""){alert("아이디를 입력해 주세요.");return;}
@@ -88,9 +82,6 @@
                     alert("오류가 발생했습니다.");
                 }                      
             }
-        },
-        watch : {
-            
         }
     }
 </script>

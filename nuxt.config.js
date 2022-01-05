@@ -1,6 +1,11 @@
 import colors from 'vuetify/es5/util/colors'
 
 export default {
+    ssr: false,
+    target: 'static', 
+    router: {
+        base: '/nuxtjs/' // github repository 이름 넣기
+    },
     env: {
         listNumber : 15 //한 화면에 보여줄 데이터 수
     },

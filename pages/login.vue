@@ -39,9 +39,6 @@
                 this.라우터이동("/");
             }
         },    
-        computed : {
-                
-        }, 
         methods : {	
             async 로그인 (){
                 let param={
@@ -59,9 +56,6 @@
                     alert("오류가 발생했습니다.!");                    
                 }
             }
-        },
-        watch : {
-
         }
     }
 </script>

@@ -115,7 +115,7 @@
 			    }
             }
         },
-        created : async function(){	
+        async created(){	
             if (process.client) {	
                 this.데이터가져오기();
                 this.조회수증가();

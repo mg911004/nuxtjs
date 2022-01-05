@@ -12,7 +12,7 @@
                 <input v-model="제목" class="input is-primary" type="text" placeholder="제목">
             </div>          
         
-            <editor height="500px" initialEditType="wysiwyg" :options="Options" ref="내용"/>
+            <editor class="mt-2" height="500px" initialEditType="wysiwyg" :options="Options" ref="내용"/>
 
             <div class="buttons mt-3" style="float: right;">
                 <button class="button is-light" @click="취소()">취소</button>
@@ -40,9 +40,6 @@
         async created(){		
             
         },    
-        computed : {
-                
-        }, 
         methods : {	
             async 글등록 (){
                 if(!this.유저아이디){this.페이지이동("login");return;}
@@ -68,9 +65,6 @@
             취소(){
                 history.go(-1);
             }
-        },
-        watch : {
-
         }
     }
 </script>

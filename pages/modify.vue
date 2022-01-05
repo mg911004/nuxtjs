@@ -12,7 +12,7 @@
                 <input v-model="제목" class="input is-primary" type="text" placeholder="제목">
             </div>          
         
-            <editor v-if="내용" height="500px" initialEditType="wysiwyg" :options="Options" ref="내용" :initialValue="내용"/>
+            <editor v-if="내용" class="mt-2" height="500px" initialEditType="wysiwyg" :options="Options" ref="내용" :initialValue="내용"/>
 
             <div class="buttons mt-3" style="float: right;">
                 <button class="button is-light" @click="취소()">취소</button>
@@ -75,16 +75,12 @@
                 if(axios.data.code==200){
                     this.라우터이동('view', {bd_no:this.$route.query.bd_no});
                 }else{
-                    console.log(axios.data.msg)
                     alert("오류가 발생했습니다.");              
                 }
             },
             취소(){
                 history.go(-1);
             }
-        },
-        watch : {
-
         }
     }
 </script>

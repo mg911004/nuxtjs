@@ -40,12 +40,6 @@
                 닉네임 : ""
             }
         },
-        created : async function(){		
-            
-        },    
-        computed : {
-                
-        }, 
         methods : {	
             회원가입 : function(){
                 const regName = /^[가-힣]{2,6}$/;
@@ -58,9 +52,6 @@
                 alert("회원가입이 완료되었습니다.");
                 location.href="index.html";       
             }
-        },
-        watch : {
-
         }
     }
 </script>

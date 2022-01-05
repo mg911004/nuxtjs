@@ -2,12 +2,12 @@ const numeral = require('numeral');
 const moment = require('moment');
 
 module.exports = {  
-    data : function(){		
+    data (){		
         return {	
             유저아이디 :''
         }
     },
-    created : async function(){		
+    async created (){		
         if(process.client){  
             let cid = this.$cookies.get("user_id");
             let cnn = this.$cookies.get("user_nickname");
