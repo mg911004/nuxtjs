@@ -9,7 +9,7 @@ export default {
         titleTemplate: '%s - nuxtProject',
         title: 'nuxtProject',
         htmlAttrs: {
-            lang: 'en'
+        lang: 'en'
     },
     meta: [
         { charset: 'utf-8' },

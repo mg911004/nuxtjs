@@ -2,7 +2,7 @@
     <div>
         <div class="card">
             <div class="card-content">
-                <div style="font-weight: bold;" class="pb-3">이슈</div>    
+                <div style="font-weight: bold;" class="pb-3">자유게시판</div>    
                 <div class="tabs is-boxed">
                     <ul>
                         <li value="hot" @click="리스트정렬('hot')"><a :style="버튼색('hot')">인기</a></li>
@@ -19,53 +19,22 @@
                     <tr>
                         <th style="width: 4rem;">추천</th>
                         <th>제목</th>
-                        <th>작성자</th>
-                        <th><abbr>등록일</abbr></th>
+                        <th style="width: 8rem;">작성자</th>
+                        <th style="width: 13rem;">등록일</th>
                     </tr>
                 </thead>
 
                 <tbody>
-                    <tr @click="경로이동()">
-                        <th>1</th>
-                        <td>안녕하세요2</td>
-                        <td>38</td>
-                        <td>23</td>                    
-                    </tr>
-                    <tr>
-                        <th>2</th>
-                        <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C."
-                                title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong>
-                        </td>
-                        <td>38</td>
-                        <td>23</td>                    
-                    </tr>
-                    <tr>
-                        <th>3</th>
-                        <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C."
-                                title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong>
-                        </td>
-                        <td>38</td>
-                        <td>23</td>                    
+                    <tr @click="라우터이동('view?bd_no='+item.BD_NO)" style="cursor:pointer"  v-for="(item,i) in 데이터" :key="i">
+                        <th>{{item.GETS}}</th>
+                        <td>{{item.SUBJECT}}</td>
+                        <td>{{item.NICKNAME}}</td>
+                        <td>{{item.REG_DATE | 시간표시변환}}</td>                    
                     </tr>
                 </tbody>
             </table>                           
         </div>
-
-
-        
-        <nav class="pagination is-centered mt-5" role="navigation" aria-label="pagination">
-            <a class="pagination-previous">Previous</a>
-            <a class="pagination-next">Next page</a>
-            <ul class="pagination-list">
-                <li><a class="pagination-link" aria-label="Goto page 1">1</a></li>
-                <li><span class="pagination-ellipsis">&hellip;</span></li>
-                <li><a class="pagination-link" aria-label="Goto page 45">45</a></li>
-                <li><a class="pagination-link is-current" aria-label="Page 46" aria-current="page">46</a></li>
-                <li><a class="pagination-link" aria-label="Goto page 47">47</a></li>
-                <li><span class="pagination-ellipsis">&hellip;</span></li>
-                <li><a class="pagination-link" aria-label="Goto page 86">86</a></li>
-            </ul>
-        </nav>
+        <v-pagination v-model="페이지" :length="페이지개수" :total-visible="7" color="#00D1B2" class="mt-5"></v-pagination>	
     </div>
 </template>
 
@@ -76,37 +45,58 @@
         mixins: [mymixin],
         data : function(){		
             return {	
-                게시판종류 : "이슈게시판",
-                정렬 : "",
+                게시판종류 : "이슈",
+                정렬 : "hot",
+                데이터 : "",
+                데이터수:0,
                 페이지: 1,
-                버튼모음 : ''
+            }
+        }, 
+        async created (){
+            if (process.client) {
+                this.정렬 = this.$route.query.sort ? this.$route.query.sort : 'hot';
+                this.데이터가져오기();
             }
         },
-        created : async function(){		
-            if(this.$route.query.sort){  //정렬있음
-				this.정렬=this.$route.query.sort;
-			}else{ //정렬없음
-				this.정렬='hot';	 
-			}
-        },    
         computed : {
-                
+            페이지개수 : function(){
+                //listNumber 한 화면에 보여줄 데이터 수
+                return Math.ceil(this.데이터수/process.env.listNumber); 
+            },
         }, 
         methods : {	
             버튼색 (val){
-                if(this.정렬==val){
+                if(this.정렬 ==val){
                     return "background-color: #00D1B2; color: #fff";
                 }
             },
-            경로이동(){
-                this.페이지이동("view?id_no=1&category="+this.게시판종류+"&sort="+this.정렬+"&page=1");
-            },
             리스트정렬(val){
-                this.라우터이동(window.location.pathname , {sort: val});
-            }      
+                this.정렬 = val;            
+                this.라우터이동(window.location.pathname.slice(1) , {sort: this.정렬});
+            },        
+            async 데이터가져오기(){
+                const param={
+                    'category' : this.게시판종류,
+                    'page' : this.페이지,
+                    'sort' : this.정렬,
+                    'listNumber' : process.env.listNumber
+                }
+                const axios = await this.$axios.post( '/boardList',this.$qs.stringify(param));
+                if(axios.data.code==200){
+                    this.데이터 = axios.data.dbo;
+                    this.데이터수 = axios.data.data_cnt;
+                }else{
+                    alert("오류가 발생했습니다.");
+                }     
+            }   
         },
         watch : {
-
+            정렬 (){
+                this.데이터가져오기();
+            },
+            페이지 (){
+                this.데이터가져오기();
+            }
         }
     }
 </script>

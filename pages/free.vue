@@ -26,7 +26,7 @@
 
                 <tbody>
                     <tr @click="라우터이동('view?bd_no='+item.BD_NO)" style="cursor:pointer"  v-for="(item,i) in 데이터" :key="i">
-                        <th>1</th>
+                        <th>{{item.GETS}}</th>
                         <td>{{item.SUBJECT}}</td>
                         <td>{{item.NICKNAME}}</td>
                         <td>{{item.REG_DATE | 시간표시변환}}</td>                    
@@ -66,7 +66,6 @@
         }, 
         methods : {	
             버튼색 (val){
-                //let sort = this.$route.query.sort ? this.$route.query.sort : 'hot';
                 if(this.정렬 ==val){
                     return "background-color: #00D1B2; color: #fff";
                 }

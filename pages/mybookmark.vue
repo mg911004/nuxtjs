@@ -2,7 +2,7 @@
     <div>
         <div class="card">
             <div class="card-content">
-                <div style="font-weight: bold;" class="pb-3">내가쓴글</div>    
+                <div style="font-weight: bold;">즐겨찾기</div>    
             </div>
         </div>
 
@@ -79,8 +79,6 @@
                 if(axios.data.code==200){
                     this.데이터 = axios.data.dbo;
                     this.데이터수 = axios.data.data_cnt;
-                    console.log(this.데이터)
-                    console.log(this.데이터수)
                 }else{
                     alert("오류가 발생했습니다.");
                 }     
