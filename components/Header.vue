@@ -2,7 +2,7 @@
     <div>
         <nav class="navbar" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
-                <a class="navbar-item" @click="페이지이동('')"><img src="logo.png" width="112" height="28"></a>
+                <a class="navbar-item" @click="페이지이동('/')"><img src="logo.png" width="112" height="28"></a>
             
                 <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
                     <span aria-hidden="true"></span>
@@ -20,16 +20,16 @@
                     <div v-if="유저아이디" class="navbar-item has-dropdown is-hoverable">
                         <a class="navbar-link">내정보</a>
                         <div class="navbar-dropdown">
-                            <a class="navbar-item">내가쓴글</a>
-                            <a class="navbar-item">즐겨찾기</a>
+                            <a class="navbar-item" @click="라우터이동('/mywrite')">내가쓴글</a>
+                            <a class="navbar-item" @click="라우터이동('/mybookmark')">즐겨찾기</a>
                         </div>
                     </div>
                     <div class="navbar-item has-dropdown is-hoverable">
                         <a class="navbar-link">커뮤니티</a>
                         <div class="navbar-dropdown">
-                            <a class="navbar-item">자유</a>
-                            <a class="navbar-item">유머</a>
-                            <a class="navbar-item">이슈</a>
+                            <a class="navbar-item" @click="라우터이동('/free')">자유</a>
+                            <a class="navbar-item" @click="라우터이동('/humer')">유머</a>
+                            <a class="navbar-item" @click="라우터이동('/issues')">이슈</a>
                         </div>
                     </div>
                 </div>
