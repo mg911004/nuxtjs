@@ -14,7 +14,7 @@
             <div id="navbarBasicExample" class="navbar-menu">             
                 <div class="navbar-start is-hidden-desktop">    
                     <a v-if="유저아이디" class="navbar-item"><span style="color: #00D1B2;">{{유저닉네임}}</span> 님 환영합니다</a> 
-                    <a v-if="유저아이디" class="navbar-item" @click="라우터이동('write')">
+                    <a v-if="유저아이디" class="navbar-item" @click="라우터이동('/write')">
                         <button type="button" style="width: 100%; border:1px solid #00D1B2; color: #000; padding: 5px 0 5px 0; font-size: 14px;">글쓰기</button>
                     </a>              
                     <div v-if="유저아이디" class="navbar-item has-dropdown is-hoverable">
@@ -37,8 +37,8 @@
                 <div class="navbar-end">  
                     <div class="navbar-item">
                         <div class="buttons">
-                            <a v-if="!유저아이디"  class="button is-primary" @click="라우터이동('signup')"><strong>회원가입</strong></a>
-                            <a v-if="!유저아이디" class="button is-light" @click="라우터이동('login')">로그인</a>
+                            <a v-if="!유저아이디"  class="button is-primary" @click="라우터이동('/signup')"><strong>회원가입</strong></a>
+                            <a v-if="!유저아이디" class="button is-light" @click="라우터이동('/login')">로그인</a>
                             <a v-if="유저아이디" class="button is-light" @click="로그아웃()">로그아웃</a>
                         </div>
                     </div>

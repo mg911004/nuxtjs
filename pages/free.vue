@@ -2,7 +2,7 @@
     <div>
         <div class="card">
             <div class="card-content">
-                <div style="font-weight: bold;" class="pb-3">자유게시판 dd</div>    
+                <div style="font-weight: bold;" class="pb-3">자유게시판 22</div>    
                 <div class="tabs is-boxed">
                     <ul>
                         <li value="hot" @click="리스트정렬('hot')"><a :style="버튼색('hot')">인기</a></li>
@@ -71,9 +71,9 @@
                 }
             },
             리스트정렬(val){
-                alert("업뎃");
                 this.정렬 = val;            
-                this.라우터이동(window.location.pathname.slice(1) , {sort: this.정렬});
+                //this.라우터이동(window.location.pathname.slice(1) , {sort: this.정렬});
+                this.라우터이동("" , {sort: this.정렬});
             },        
             async 데이터가져오기(){
                 const param={
