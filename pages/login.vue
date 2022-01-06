@@ -3,7 +3,7 @@
         <section class="section mt-6">
             <div class="container" style="width:550px;">
                 <div style="border: 1px solid #DEE1E4;" class="px-6 py-6">
-                    <div class="pb-4 center">로고</div> 
+                    <div class="pb-4 center"><img src="logo.png" ></div> 
         
                     <div class="mt-2">
                         <input v-model="아이디" class="input is-primary is-large" type="text" placeholder="아이디">
@@ -14,7 +14,7 @@
 
                     <div class="mt-3">
                         <button class="button is-primary is-large" style="width: 100%;" @click="로그인()">로그인</button>
-                        <button class="button is-light is-large mt-2" style="width: 100%;" @click="경로이동('signup')">회원가입</button>    
+                        <button class="button is-light is-large mt-2" style="width: 100%;" @click="페이지이동('/signup')">회원가입</button>    
                     </div> 
                 </div>
             </div>
