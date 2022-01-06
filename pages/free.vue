@@ -41,7 +41,7 @@
 <script>
     const mymixin = require('~/mixins/total.js'); 
     export default {  
-        name: 'index',
+        name: 'free',
         mixins: [mymixin],
         data : function(){		
             return {	
@@ -72,6 +72,7 @@
             },
             리스트정렬(val){
                 this.정렬 = val;            
+                //this.라우터이동(window.location.pathname.slice(1) , {sort: this.정렬});
                 this.라우터이동("" , {sort: this.정렬});
             },        
             async 데이터가져오기(){
