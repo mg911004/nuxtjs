@@ -2,7 +2,7 @@
     <div>
         <div class="card">
             <div class="card-content">
-                <div style="font-weight: bold;" class="pb-3">자유게시판!</div>    
+                <div style="font-weight: bold;" class="pb-3">자유게시판</div>    
                 <div class="tabs is-boxed">
                     <ul>
                         <li value="hot" @click="리스트정렬('hot')"><a :style="버튼색('hot')">인기</a></li>
