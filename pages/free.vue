@@ -48,6 +48,7 @@
                 게시판종류 : "자유",
                 정렬 : "hot",
                 데이터 : "",
+                데이터2 : "",
                 데이터수:0,
                 페이지: 1,
             }
@@ -55,7 +56,26 @@
         async created (){
             if (process.client) {
                 this.정렬 = this.$route.query.sort ? this.$route.query.sort : 'hot';
-                this.데이터가져오기();
+                                const param={
+                    'category' : this.게시판종류,
+                    'page' : this.페이지,
+                    'sort' : this.정렬,
+                    'listNumber' : process.env.listNumber
+                }
+                const axios = await this.$axios.post( '/boardList',this.$qs.stringify(param));
+                if(axios.data.code==200){
+                    this.데이터 = axios.data.dbo;
+                     this.데이터2 = axios.data.dbo;
+                    this.데이터수 = axios.data.data_cnt;
+
+                    this.데이터[0].SUBJECT = "하하하하하하테스트11";
+                    console.log(axios)
+                    console.log(this.데이터[0].SUBJECT)
+                    console.log(this.데이터2[0].SUBJECT)
+                    console.log(axios.data.dbo[0].SUBJECT)
+                }else{
+                    alert("오류가 발생했습니다.");
+                }     
             }
         },
         computed : {
@@ -85,7 +105,13 @@
                 const axios = await this.$axios.post( '/boardList',this.$qs.stringify(param));
                 if(axios.data.code==200){
                     this.데이터 = axios.data.dbo;
+                     this.데이터2 = axios.data.dbo;
                     this.데이터수 = axios.data.data_cnt;
+
+                    this.데이터[0].SUBJECT = "하하하하하하테스트";
+                    console.log(this.데이터[0].SUBJECT)
+                    console.log(this.데이터2[0].SUBJECT)
+                    console.log(axios.data.dbo[0].SUBJECT)
                 }else{
                     alert("오류가 발생했습니다.");
                 }     

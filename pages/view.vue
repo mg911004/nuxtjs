@@ -2,7 +2,7 @@
     <div>
         <div class="card">
             <div class="card-content">
-                <div class="content">
+                <div class="content" style="font-weight:bold">
                     {{등록글정보.SUBJECT}}
                 </div>
             </div>

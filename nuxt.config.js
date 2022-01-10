@@ -7,7 +7,8 @@ export default {
         base: '/nuxtjs/' // github repository 이름 넣기
     },
     env: {
-        listNumber : 15 //한 화면에 보여줄 데이터 수
+        listNumber : 15, //한 화면에 보여줄 데이터 수
+        nodeURL : 'http://localhost:5000'
     },
     // Global page headers: https://go.nuxtjs.dev/config-head
     head: {
