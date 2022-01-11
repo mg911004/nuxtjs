@@ -44,9 +44,6 @@
 			    },
             }
         },
-        async created(){		
-            
-        },    
         methods : {	
             async 글등록 (){
                 if(!this.유저아이디){this.페이지이동("login");return;}

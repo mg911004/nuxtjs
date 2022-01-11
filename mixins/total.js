@@ -8,13 +8,11 @@ module.exports = {
         }
     },
     async created (){		
-        if(process.client){  
-            let cid = this.$cookies.get("user_id");
-            let cnn = this.$cookies.get("user_nickname");
-            if(cid){
-                this.유저아이디 = cid;
-                this.유저닉네임 = cnn;
-            }
+        let cid = this.$cookies.get("user_id");
+        let cnn = this.$cookies.get("user_nickname");
+        if(cid){
+            this.유저아이디 = cid;
+            this.유저닉네임 = cnn;
         }
     },    
     computed : {

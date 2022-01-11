@@ -43,7 +43,7 @@
     export default {  
         name: 'humer',
         mixins: [mymixin],
-        data : function(){		
+        data (){		
             return {	
                 게시판종류 : "유머",
                 정렬 : "hot",
@@ -53,10 +53,8 @@
             }
         }, 
         async created (){
-            if (process.client) {
-                this.정렬 = this.$route.query.sort ? this.$route.query.sort : 'hot';
-                this.데이터가져오기();
-            }
+            this.정렬 = this.$route.query.sort ? this.$route.query.sort : 'hot';
+            this.데이터가져오기();
         },
         computed : {
             페이지개수 : function(){

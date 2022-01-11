@@ -79,7 +79,7 @@
     export default {  
         name: 'views',
         mixins: [mymixin],
-        data : function(){		
+        data (){		
             return {	
                 테스트: 15000,
                 등록글정보 :{
@@ -116,10 +116,8 @@
             }
         },
         async created(){	
-            if (process.client) {	
-                this.데이터가져오기();
-                this.조회수증가();
-            }
+            this.데이터가져오기();
+            this.조회수증가();
         },    
         computed : {
             즐겨찾기색 : function(){

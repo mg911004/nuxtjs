@@ -38,10 +38,8 @@
             }
         },
         async created(){	
-            if (process.client) {	
-                if(!this.유저아이디){this.페이지이동("login");return;}
-                this.데이터가져오기();
-            }
+            if(!this.유저아이디){this.페이지이동("login");return;}
+            this.데이터가져오기();
         },    
         methods : {	
             async 데이터가져오기(){

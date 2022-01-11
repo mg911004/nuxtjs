@@ -36,7 +36,7 @@
     export default {  
         name: 'mybookmark',
         mixins: [mymixin],
-        data : function(){		
+        data (){		
             return {	
                 데이터 : [{
                     BD_NO : "",
@@ -57,10 +57,8 @@
             }
         },
         async created (){
-            if (process.client) {
-                if(!this.유저아이디){this.페이지이동("login");return;}
-                this.데이터가져오기();
-            }
+            if(!this.유저아이디){this.페이지이동("login");return;}
+            this.데이터가져오기();
         },  
         computed : {
             페이지개수 : function(){

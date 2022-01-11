@@ -32,7 +32,7 @@
         layout: 'noleft',
         name: 'join',
         mixins: [mymixin],
-        data : function(){		
+        data (){		
             return {	
                 아이디 : "",
                 비밀번호 : "",

@@ -28,13 +28,13 @@
         layout: 'noleft',
         name: 'login',
         mixins: [mymixin],
-        data : function(){		
+        data (){		
             return {	
                 아이디 : "",
                 비밀번호 : ""
             }
         },
-        created : async function(){		
+        async created (){		
             if(this.유저아이디){
                 this.라우터이동("/");
             }

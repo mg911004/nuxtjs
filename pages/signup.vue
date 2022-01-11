@@ -40,7 +40,7 @@
         layout: 'noleft',
         name: 'signup',
         mixins: [mymixin],
-        data : function(){		
+        data (){		
             return {	
                 아이디 : "",
                 비밀번호 : "",
