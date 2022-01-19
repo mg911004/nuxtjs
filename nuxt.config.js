@@ -8,7 +8,7 @@ export default {
     },
     env: {
         listNumber : 15, //한 화면에 보여줄 데이터 수
-        nodeURL : 'http://localhost:5000'
+        nodeURL : 'http://ygnode.cafe24app.com/:8001'
     },
     // Global page headers: https://go.nuxtjs.dev/config-head
     head: {
@@ -54,7 +54,7 @@ export default {
         '@nuxtjs/axios'
     ],
     axios: {
-        baseURL: 'http://localhost:5000', // Used as fallback if no runtime config is provided
+        baseURL: 'http://ygnode.cafe24app.com/:8001', // Used as fallback if no runtime config is provided
     },
     // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
     vuetify: {
