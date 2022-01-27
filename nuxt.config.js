@@ -11,6 +11,7 @@ export default {
         nodeURL : '54.210.225.118:3001/'
     },
     // Global page headers: https://go.nuxtjs.dev/config-head
+    // <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     head: {
         titleTemplate: '%s - nuxtProject',
         title: 'nuxtProject',
@@ -21,7 +22,8 @@ export default {
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         { hid: 'description', name: 'description', content: '' },
-        { name: 'format-detection', content: 'telephone=no' }
+        { name: 'format-detection', content: 'telephone=no' },
+        { 'http-equiv': 'Content-Security-Policy' , content: 'upgrade-insecure-requests'}
     ],
     link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
