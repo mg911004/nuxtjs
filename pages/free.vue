@@ -55,6 +55,7 @@
         async created (){
             //this.데이터가져오기();
             this.test();
+            this.test2();
         },
         computed : {
             페이지개수 : function(){
@@ -95,7 +96,15 @@
                 }else{
                     alert("오류가 발생했습니다.");
                 }     
-            }     
+            },
+            async test2(){
+                const axios = await this.$axios.post( '/test2');
+                if(axios.data.code==200){
+                    console.log(axios.data.dbo);
+                }else{
+                    alert("오류가 발생했습니다.");
+                }     
+            }        
         },
         watch : {
             정렬 (){
