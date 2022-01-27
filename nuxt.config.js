@@ -8,8 +8,7 @@ export default {
     },
     env: {
         listNumber : 15, //한 화면에 보여줄 데이터 수
-        nodeURL : 'http://ec2-54-210-225-118.compute-1.amazonaws.com:3001/'
-        
+        nodeURL : 'http://54.210.225.118:3001/'
     },
     // Global page headers: https://go.nuxtjs.dev/config-head
     // <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
@@ -24,7 +23,7 @@ export default {
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         { hid: 'description', name: 'description', content: '' },
         { name: 'format-detection', content: 'telephone=no' },
-        { 'http-equiv': 'Content-Security-Policy' , content: 'upgrade-insecure-requests'}
+        //{ 'http-equiv': 'Content-Security-Policy' , content: 'upgrade-insecure-requests'}
     ],
     link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -57,7 +56,7 @@ export default {
         '@nuxtjs/axios'
     ],
     axios: {
-        baseURL: 'http://ec2-54-210-225-118.compute-1.amazonaws.com:3001/',
+        baseURL: 'http://54.210.225.118:3001/',
     },
     // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
     vuetify: {
