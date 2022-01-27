@@ -8,7 +8,7 @@ export default {
     },
     env: {
         listNumber : 15, //한 화면에 보여줄 데이터 수
-        nodeURL : 'http://54.210.225.118:3001/'
+        nodeURL : '54.210.225.118:3001/'
     },
     // Global page headers: https://go.nuxtjs.dev/config-head
     head: {
@@ -54,7 +54,7 @@ export default {
         '@nuxtjs/axios'
     ],
     axios: {
-        baseURL: 'http://54.210.225.118:3001/',
+        baseURL: '54.210.225.118:3001/',
     },
     // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
     vuetify: {
