@@ -18,11 +18,11 @@
                 </thead>
 
                 <tbody>
-                    <tr @click="라우터이동('view?bd_no='+item.BD_NO)" style="cursor:pointer"  v-for="(item,i) in 데이터" :key="i">
+                    <tr @click="라우터이동('view?bd_no='+item.bd_no)" style="cursor:pointer"  v-for="(item,i) in 데이터" :key="i">
                         <th>1</th>
-                        <td>{{item.SUBJECT}}</td>
-                        <td>{{item.NICKNAME}}</td>
-                        <td>{{item.REG_DATE | 시간표시변환}}</td>                     
+                        <td>{{item.subject}}</td>
+                        <td>{{item.nickname}}</td>
+                        <td>{{item.reg_date | 시간표시변환}}</td>                     
                     </tr>
                 </tbody>
             </table>                        
@@ -39,18 +39,18 @@
         data (){		
             return {	
                 데이터 : [{
-                    BD_NO : "",
-                    ID : "",
-                    NICKNAME : "",
-                    CATEGORY : "",
-                    SUBJECT : "",
-                    CONTENT : "",
-                    GETS : 0,
-                    DEGETS : 0,
-                    HITS : 0,
-                    COMMENTS : 0,
-                    HIDE : 0,
-                    REG_DATE : ""
+                    bd_no : "",
+                    id : "",
+                    nickname : "",
+                    category : "",
+                    subject : "",
+                    content : "",
+                    gets : 0,
+                    degets : 0,
+                    hits : 0,
+                    comments : 0,
+                    hide : 0,
+                    reg_date : ""
                 }],
                 데이터수:0,
                 페이지: 1

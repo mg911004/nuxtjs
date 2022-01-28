@@ -48,9 +48,9 @@
                 }
                 const axios = await this.$axios.post( '/boardView',this.$qs.stringify(param));
                 if(axios.data.code==200){
-                    this.분류 = axios.data.dbo.CATEGORY;
-                    this.제목 = axios.data.dbo.SUBJECT;
-                    this.내용 = axios.data.dbo.CONTENT;
+                    this.분류 = axios.data.dbo.category;
+                    this.제목 = axios.data.dbo.subject;
+                    this.내용 = axios.data.dbo.content;
                 }else{
                     alert("오류가 발생했습니다.");
                 }     

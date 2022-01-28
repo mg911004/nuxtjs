@@ -3,34 +3,34 @@
         <div class="card">
             <div class="card-content">
                 <div class="content" style="font-weight:bold">
-                    {{등록글정보.SUBJECT}}
+                    {{등록글정보.subject}}
                 </div>
             </div>
         
             <div class="card-content divider">
                 <div class="content">
-                    <span>{{등록글정보.NICKNAME}}</span> <span class="divide_line"></span> <span>{{등록글정보.REG_DATE | 시간표시변환}}</span>
+                    <span>{{등록글정보.nickname}}</span> <span class="divide_line"></span> <span>{{등록글정보.reg_date | 시간표시변환}}</span>
                     <span style="float: right;">
-                        <span>조회 {{등록글정보.HITS | 콤마표시}}</span> <span class="divide_line"></span> <span>댓글 {{등록글정보.COMMENTS | 콤마표시}}</span> <span class="divide_line"></span> <span>추천 {{등록글정보.GETS | 콤마표시}}</span>
+                        <span>조회 {{등록글정보.hits | 콤마표시}}</span> <span class="divide_line"></span> <span>댓글 {{등록글정보.comments | 콤마표시}}</span> <span class="divide_line"></span> <span>추천 {{등록글정보.gets | 콤마표시}}</span>
                     </span>    
                 </div>
 
                 <!---수정,삭제버튼--->
                 <div v-if="유저아이디==등록글정보.ID">
-                    <button class="button is-small is-outlined" @click="라우터이동('modify?bd_no='+등록글정보.BD_NO)">수정</button>    
+                    <button class="button is-small is-outlined" @click="라우터이동('modify?bd_no='+등록글정보.bd_no)">수정</button>    
                     <button class="button is-danger is-small is-outlined" @click="글삭제()">삭제</button>
                 </div> 
             </div>
 
             <div class="card-content">
                 <div class="content">
-                    <viewer v-if="등록글정보.CONTENT" :initialValue="등록글정보.CONTENT"/>
+                    <viewer v-if="등록글정보.content" :initialValue="등록글정보.content"/>
                 </div>
             </div>
 
             <footer class="card-footer">
-                <a class="card-footer-item" @click="추천비추천('추천')">추천 {{등록글정보.GETS | 콤마표시}}</a>
-                <a class="card-footer-item" @click="추천비추천('비추천')">비추천 {{등록글정보.DEGETS | 콤마표시}}</a>
+                <a class="card-footer-item" @click="추천비추천('추천')">추천 {{등록글정보.gets | 콤마표시}}</a>
+                <a class="card-footer-item" @click="추천비추천('비추천')">비추천 {{등록글정보.degets | 콤마표시}}</a>
                 <a class="card-footer-item" @click="즐겨찾기()" :style="즐겨찾기색">즐겨찾기</a>
             </footer>
         </div>
@@ -39,7 +39,7 @@
             <!---댓글개수--->
             <div class="card-content">
                 <div class="content">  
-                    댓글 <span style="color:red; font-weight:500">{{등록글정보.COMMENTS | 콤마표시}}</span>
+                    댓글 <span style="color:red; font-weight:500">{{등록글정보.comments | 콤마표시}}</span>
                 </div>
             </div>
             <!--//////-->
@@ -59,13 +59,13 @@
             <!---댓글--->
             <div class="card-content divider" v-for="(item,i) in 댓글정보" :key="i">
                 <div class="content">
-                    <span style="font-weight:bold; font-size:0.9rem;">{{item.NICKNAME}}</span> <span class="divide_line"></span> <span style="font-size:0.9rem;">{{item.REG_DATE | 시간표시변환}}</span>
+                    <span style="font-weight:bold; font-size:0.9rem;">{{item.nickname}}</span> <span class="divide_line"></span> <span style="font-size:0.9rem;">{{item.reg_date | 시간표시변환}}</span>
                 </div>
                 <div class="content">
-                    <span style="white-space: pre-line; font-size:0.9rem;">{{item.CONTENT}}</span>
+                    <span style="white-space: pre-line; font-size:0.9rem;">{{item.content}}</span>
                 </div>
-                <div class="content" v-if="유저아이디 && 유저아이디==item.ID">
-                    <span style="color:red; cursor:pointer" @click="댓글삭제(item.RP_NO)">삭제</span>
+                <div class="content" v-if="유저아이디 && 유저아이디==item.id">
+                    <span style="color:red; cursor:pointer" @click="댓글삭제(item.rp_no)">삭제</span>
                 </div>
             </div>
             <!--//////-->
@@ -83,25 +83,25 @@
             return {	
                 테스트: 15000,
                 등록글정보 :{
-                    BD_NO : "",
-                    ID : "",
-                    NICKNAME : "",
-                    CATEGORY : "",
-                    SUBJECT : "",
-                    CONTENT : "",
-                    GETS : 0,
-                    DEGETS : 0,
-                    HITS : 0,
-                    COMMENTS : 0,
-                    HIDE : 0,
-                    REG_DATE : ""
+                    bd_no : "",
+                    id : "",
+                    nickname : "",
+                    category : "",
+                    subject : "",
+                    content : "",
+                    gets : 0,
+                    degets : 0,
+                    hits : 0,
+                    comments : 0,
+                    hide : 0,
+                    reg_date : ""
                 },
                 댓글정보:{
-                    RP_NO : "",
-                    ID : "",
-                    NICKNAME : "",
-                    CONTENT : "",
-                    REG_DATE : ""
+                    rp_no : "",
+                    id : "",
+                    nickname : "",
+                    content : "",
+                    reg_date : ""
                 },
                 댓글내용 : "",
                 계정당추천개수 : 0,
