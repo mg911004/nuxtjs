@@ -1,5 +1,6 @@
 {
   "name": "nuxtroject",
+  "hompage" : "/",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -9,7 +10,6 @@
     "generate": "nuxt generate",
     "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
   },
-  "hompage" : "mg911004.site",
   "dependencies": {
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/moment": "^1.6.1",
