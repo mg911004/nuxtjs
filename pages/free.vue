@@ -54,7 +54,7 @@
         }, 
         async created (){
             this.데이터가져오기();
-            this.test();
+            //this.test();
         },
         computed : {
             페이지개수 : function(){
