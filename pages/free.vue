@@ -86,6 +86,7 @@
                     this.데이터수 = axios.data.data_cnt;
                 }else{
                     alert("오류가 발생했습니다.");
+                    console.log(axios.data.err)
                 }     
             },
             async test(){
