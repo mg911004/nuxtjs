@@ -92,7 +92,7 @@
                 const axios = await this.$axios.get( '/test');
                 if(axios.data.code==200){
                     console.log(axios.data.dbo);
-                    this.데이터수 = axios.data.data_cnt;
+                    //console.log(axios.data.data_cnt);
                 }else{
                     alert("오류가 발생했습니다.");
                 }     
