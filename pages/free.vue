@@ -54,7 +54,6 @@
         }, 
         async created (){
             this.데이터가져오기();
-            //this.test();
         },
         computed : {
             페이지개수 : function(){
@@ -80,34 +79,15 @@
                     'sort' : this.정렬,
                     'listNumber' : process.env.listNumber
                 }
-                console.log(param.category)
-                console.log(param.page)
-                console.log(param.sort)
-                console.log(param.listNumber)
+
                 const axios = await this.$axios.post( '/boardList',this.$qs.stringify(param));
                 if(axios.data.code==200){
                     this.데이터 = axios.data.dbo;
                     this.데이터수 = axios.data.data_cnt;
                 }else{
                     alert("오류가 발생했습니다.");
-                    console.log(axios.data.err)
                 }     
-            },
-            async test(){
-                const param={
-                    'category' : '자유',
-                    'sort' : '최신',
-                    'listNumber' : process.env.listNumber
-                }
-
-                const axios = await this.$axios.post( '/test',this.$qs.stringify(param));
-                if(axios.data.code==200){
-                    console.log(axios.data);
-                    //console.log(axios.data.data_cnt);
-                }else{
-                    alert("오류가 발생했습니다.");
-                }     
-            }   
+            }
         },
         watch : {
             정렬 (){
