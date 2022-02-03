@@ -89,7 +89,7 @@
                 }     
             },
             async test(){
-                const axios = await this.$axios.get( '/test');
+                const axios = await this.$axios.post( '/test');
                 if(axios.data.code==200){
                     console.log(axios.data.dbo);
                     //console.log(axios.data.data_cnt);
