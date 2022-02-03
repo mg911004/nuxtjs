@@ -89,7 +89,13 @@
                 }     
             },
             async test(){
-                const axios = await this.$axios.post( '/test');
+                const param={
+                    'category' : '자유',
+                    'sort' : '최신',
+                    'listNumber' : process.env.listNumber
+                }
+
+                const axios = await this.$axios.post( '/test',this.$qs.stringify(param));
                 if(axios.data.code==200){
                     console.log(axios.data.dbo);
                     //console.log(axios.data.data_cnt);
