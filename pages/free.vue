@@ -80,6 +80,10 @@
                     'sort' : this.정렬,
                     'listNumber' : process.env.listNumber
                 }
+                console.log(param.category)
+                console.log(param.page)
+                console.log(param.sort)
+                console.log(param.listNumber)
                 const axios = await this.$axios.post( '/boardList',this.$qs.stringify(param));
                 if(axios.data.code==200){
                     this.데이터 = axios.data.dbo;
