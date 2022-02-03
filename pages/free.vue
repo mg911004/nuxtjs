@@ -97,7 +97,7 @@
 
                 const axios = await this.$axios.post( '/test',this.$qs.stringify(param));
                 if(axios.data.code==200){
-                    console.log(axios.data.dbo);
+                    console.log(axios.data);
                     //console.log(axios.data.data_cnt);
                 }else{
                     alert("오류가 발생했습니다.");
