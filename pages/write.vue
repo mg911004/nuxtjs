@@ -33,14 +33,7 @@
                 제목:"",
                 내용:"",
                 Options: {
-				    language : "ko",
-                    hooks :{
-                        addImageBlobHook: async (file, callback) => {							
-                            const imgHttp = await this.imgUpLoad(file); //저장된 이미지 주소값					
-                            callback(imgHttp,'addImage');						
-                            return false;
-                        }
-                    },
+				    language : "ko"
 			    },
             }
         },

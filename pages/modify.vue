@@ -25,7 +25,7 @@
 <script>
     const mymixin = require('~/mixins/total.js'); 
     export default {  
-        name: 'write',
+        name: 'modify',
         mixins: [mymixin],
         data(){		
             return {	
