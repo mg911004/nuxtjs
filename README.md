@@ -63,5 +63,6 @@
 
 ## 동작 구조
 
-![구조-001](https://user-images.githubusercontent.com/87694251/152490415-cea0d1f0-68e6-490b-91c5-4e173e9f7222.jpg)
+![구조-001](https://user-images.githubusercontent.com/87694251/152490865-350db763-90da-4739-9416-dd2c4de24066.jpg)
+
 
