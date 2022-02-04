@@ -11,24 +11,28 @@ export default {
         //nodeURL : 'http://50.16.27.105:3001'
         imgUpLoadURL : 'http://50.16.27.105:3001' 
     },
+    axios: {
+        //baseURL: 'http://50.16.27.105:3001',      
+        baseURL: 'http://commu.cafe24app.com',
+    },
     // Global page headers: https://go.nuxtjs.dev/config-head
     // <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     head: {
-        titleTemplate: '%s - nuxtProject',
-        title: '커뮤니티',
+        //titleTemplate: '%s - ',
+        title: '자유로운 토크',
         htmlAttrs: {
-        lang: 'en'
-    },
-    meta: [
-        { charset: 'utf-8' },
-        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { hid: 'description', name: 'description', content: '' },
-        { name: 'format-detection', content: 'telephone=no' },
-        //{ 'http-equiv': 'Content-Security-Policy' , content: 'upgrade-insecure-requests'}
-    ],
-    link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+            lang: 'en'
+        },
+        meta: [
+            { charset: 'utf-8' },
+            { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+            { hid: 'description', name: 'description', content: '' },
+            { name: 'format-detection', content: 'telephone=no' },
+            //{ 'http-equiv': 'Content-Security-Policy' , content: 'upgrade-insecure-requests'}
+        ],
+        link: [
+            { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+        ]
     },
     // Global CSS: https://go.nuxtjs.dev/config-css
     css: [
@@ -56,10 +60,6 @@ export default {
     modules: [
         '@nuxtjs/axios'
     ],
-    axios: {
-        //baseURL: 'http://50.16.27.105:3001',      
-        baseURL: 'http://commu.cafe24app.com',
-    },
     // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
     vuetify: {
         customVariables: ['~/assets/variables.scss'],
