@@ -22,7 +22,7 @@
         Bulma CSS, Javascript, nuxt.js, axios
 
     * Back<br>
-        node.js / express.js, MySQL
+        node.js / express.js, MySQL, AWS EC2
         
 3. **디렉터리구조**
     * layouts 
