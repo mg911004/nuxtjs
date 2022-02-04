@@ -33,7 +33,14 @@
                 제목:"",
                 내용:"",
                 Options: {
-				    language : "ko"
+				    language : "ko",
+                    hooks :{
+                        addImageBlobHook: async (file, callback) => {							
+                            const imgHttp = await this.imgUpLoad(file); //저장된 이미지 주소값					
+                            callback(imgHttp,'addImage');						
+                            return false;
+                        }
+                    },
 			    },
             }
         },
@@ -76,6 +83,19 @@
                     alert("오류가 발생했습니다.");              
                 }
             },
+            async imgUpLoad (file){
+                //올린 이미지 백엔드 서버로 업로드 시킨 후 이미지 주소값 리턴
+                let data = new FormData();
+
+                data.append('img', file);			
+
+                let axios = await this.$axios.post( process.env.imgUpLoadURL+'/upload',data)	
+                if(axios.data.code==200){				
+                    return process.env.imgUpLoadURL+'/'+axios.data.file.filename;
+                }else {
+                    alert('오류가 발생했습니다.');
+                }
+		    },
             취소(){
                 history.go(-1);
             }
