@@ -17,7 +17,7 @@
 
                 <!---수정,삭제버튼--->
                 <div v-if="유저아이디==등록글정보.id">
-                    <button class="button is-small is-outlined" @click="라우터이동('modify?bd_no='+등록글정보.bd_no)">수정</button>    
+                    <button class="button is-small is-outlined" @click="라우터이동('../modify?bd_no='+등록글정보.bd_no)">수정</button>    
                     <button class="button is-danger is-small is-outlined" @click="글삭제()">삭제</button>
                 </div> 
             </div>
