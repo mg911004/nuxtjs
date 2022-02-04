@@ -36,7 +36,7 @@
         },
         async created (){		
             if(this.유저아이디){
-                this.라우터이동("/");
+                this.라우터이동("");
             }
         },    
         methods : {	
@@ -49,7 +49,7 @@
                 if(axios.data.code==200){
                     this.$cookies.set("user_id", axios.data.ssid,"1");
                     this.$cookies.set("user_nickname", axios.data.ssnickname,"1");
-                    this.라우터이동("/");
+                    this.라우터이동("");
                 }else if(axios.data.code==501){
                     alert("아이디 또는 비밀번호 오류입니다.");
                 }else{
