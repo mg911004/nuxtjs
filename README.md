@@ -4,11 +4,11 @@
     깔끔하고 직관적인 UI로 구성한 커뮤니티 사이트의 전반적인 기능을 구현한 프로젝트
  
 ## 개발 환경
-    > ### Fornt-End
-        Bulma CSS, Javascript, nuxt.js, axios
+> ### Fornt-End
+    Bulma CSS, Javascript, nuxt.js, axios
 
-    > ### -End 
-        node.js / express.js, MySQL, AWS EC2
+> ### Back-End 
+    node.js / express.js, MySQL, AWS EC2
         
 ## 디렉터리 구조
     * layouts<br>
