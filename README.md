@@ -12,9 +12,9 @@
         
 ## 디렉터리 구조
 > ### layouts
-  애플리케이션의 레이아웃을 포함하는 디렉토리 (default, noleft)
-        
-    * components<br>
+    애플리케이션의 레이아웃을 포함하는 디렉토리 (default, noleft)
+   
+> ### components   
         애플리케이션에서 사용될 컴포넌트들을 포함하는 디렉토리 (Header, Footer, Leftmunu)
         
     * pages<br>
