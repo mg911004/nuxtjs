@@ -71,9 +71,9 @@
 
                 data.append('img', file);			
 
-                let axios = await this.$axios.post( '/upload',data)	
+                let axios = await this.$axios.post( process.env.imgUpLoadURL+'/upload',data)	
                 if(axios.data.code==200){				
-                    return process.env.nodeURL+'/'+axios.data.file.filename;
+                    return process.env.imgUpLoadURL+'/'+axios.data.file.filename;
                 }else {
                     alert('오류가 발생했습니다.');
                 }

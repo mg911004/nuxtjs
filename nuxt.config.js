@@ -8,7 +8,8 @@ export default {
     },
     env: {
         listNumber : 15, //한 화면에 보여줄 데이터 수
-        nodeURL : 'http://commu.cafe24app.com'
+        //nodeURL : 'http://50.16.27.105:3001'
+        imgUpLoadURL : 'http://50.16.27.105:3001' 
     },
     // Global page headers: https://go.nuxtjs.dev/config-head
     // <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
@@ -56,6 +57,7 @@ export default {
         '@nuxtjs/axios'
     ],
     axios: {
+        //baseURL: 'http://50.16.27.105:3001',      
         baseURL: 'http://commu.cafe24app.com',
     },
     // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
