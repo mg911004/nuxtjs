@@ -4,7 +4,7 @@ const moment = require('moment');
 module.exports = {  
     data (){		
         return {	
-            유저아이디 :''
+            유저아이디 :'';
         }
     },
     async created (){		
@@ -23,6 +23,7 @@ module.exports = {
             location.href=url;
         },
         라우터이동 (url , q){
+            alert(url+'/');
             this.$router.push( {path: url+'/', query: q } );
         },
         async 로그아웃(){
