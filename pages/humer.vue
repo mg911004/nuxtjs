@@ -25,7 +25,7 @@
                 </thead>
 
                 <tbody>
-                    <tr @click="라우터이동('view?bd_no='+item.bd_no)" style="cursor:pointer"  v-for="(item,i) in 데이터" :key="i">
+                    <tr @click="라우터이동('../view?bd_no='+item.bd_no)" style="cursor:pointer"  v-for="(item,i) in 데이터" :key="i">
                         <th>{{item.gets}}</th>
                         <td>{{item.subject}}</td>
                         <td>{{item.nickname}}</td>

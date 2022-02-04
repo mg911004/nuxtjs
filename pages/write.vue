@@ -60,7 +60,7 @@
                 }
                 const axios = await this.$axios.post( '/write',this.$qs.stringify(param));
                 if(axios.data.code==200){
-                    this.라우터이동('view', {bd_no:axios.data.bd_no} );
+                    this.라우터이동('../view', {bd_no:axios.data.bd_no} );
                 }else{
                     alert("오류가 발생했습니다.");              
                 }
