@@ -7,7 +7,7 @@ export default {
         base: '' // github repository 이름 넣기
     },
     env: {
-        listNumber : 15, //한 화면에 보여줄 데이터 수
+        listNumber : 12, //한 화면에 보여줄 데이터 수
         //nodeURL : 'http://50.16.27.105:3001'
         imgUpLoadURL : 'http://50.16.27.105:3001' 
     },
