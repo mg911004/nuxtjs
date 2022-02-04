@@ -18,8 +18,8 @@ export default {
     // Global page headers: https://go.nuxtjs.dev/config-head
     // <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     head: {
-        //titleTemplate: '%s - ',
-        title: '자유로운 토크',
+        titleTemplate: '%s - 자유로운 토크',
+        title: '자톡',
         htmlAttrs: {
             lang: 'en'
         },
