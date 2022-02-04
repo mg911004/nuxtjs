@@ -4,7 +4,7 @@ export default {
     ssr: false,
     target: 'static', 
     router: {
-        base: '/' // github repository 이름 넣기
+        //base: '/' // github repository 이름 넣기
     },
     env: {
         listNumber : 15, //한 화면에 보여줄 데이터 수
