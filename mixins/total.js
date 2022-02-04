@@ -4,7 +4,7 @@ const moment = require('moment');
 module.exports = {  
     data (){		
         return {	
-            유저아이디 :'';
+            유저아이디 :''
         }
     },
     async created (){		
