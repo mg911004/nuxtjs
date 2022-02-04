@@ -5,10 +5,10 @@
  
 ## 개발 환경
 > ### Fornt-End
-    Bulma CSS, vue.js / nuxt.js, axios
+    vue.js/nuxt.js, Bulma CSS, axios
 
 > ### Back-End 
-    node.js / express.js, MySQL, AWS EC2
+    node.js/express.js, MySQL, AWS EC2
         
 ## 디렉터리 구조
 > ### layouts
