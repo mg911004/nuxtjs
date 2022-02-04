@@ -15,7 +15,7 @@ export default {
     // <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     head: {
         titleTemplate: '%s - nuxtProject',
-        title: 'nuxtProject',
+        title: '커뮤니티',
         htmlAttrs: {
         lang: 'en'
     },
