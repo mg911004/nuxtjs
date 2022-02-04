@@ -23,8 +23,7 @@ module.exports = {
             location.href=url;
         },
         라우터이동 (url , q){
-            alert(url+'/');
-            this.$router.push( {path: url+'/', query: q } );
+            this.$router.push( {path: url, query: q } );
         },
         async 로그아웃(){
             if(!this.유저아이디){

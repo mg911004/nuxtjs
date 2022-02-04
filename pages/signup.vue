@@ -77,7 +77,7 @@
                     alert("회원가입이 완료되었습니다.");
                     this.$cookies.set("user_id", axios.data.ssid,"1");
                     this.$cookies.set("user_nickname", axios.data.ssnickname,"1");
-                    this.라우터이동("");
+                    this.라우터이동("/");
                 }else{
                     alert("오류가 발생했습니다.");
                 }                      
