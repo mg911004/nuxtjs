@@ -7,7 +7,7 @@
  
 ## 개발 환경
 > ### Fornt-End
-  vue.js/nuxt.js, Bulma CSS, axios
+  * vue.js/nuxt.js, Bulma CSS, axios
 
 > ### Back-End 
   node.js/express.js, MySQL, AWS EC2
