@@ -7,14 +7,14 @@
  
 ## 개발 환경
 > ### Fornt-End
-    vue.js/nuxt.js, Bulma CSS, axios
+  vue.js/nuxt.js, Bulma CSS, axios
 
 > ### Back-End 
-    node.js/express.js, MySQL, AWS EC2
+  node.js/express.js, MySQL, AWS EC2
         
 ## 디렉터리 구조
 > ### layouts
-    애플리케이션의 레이아웃을 포함하는 디렉토리 (default, noleft) 
+  애플리케이션의 레이아웃을 포함하는 디렉토리 (default, noleft) 
 > ### components   
     애플리케이션에서 사용될 컴포넌트들을 포함하는 디렉토리 (Header, Footer, Leftmunu)
 > ### pages  
