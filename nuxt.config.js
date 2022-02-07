@@ -12,8 +12,8 @@ export default {
         imgUpLoadURL : 'http://50.16.27.105:3001' 
     },
     axios: {
-        //baseURL: 'http://50.16.27.105:3001',      
-        baseURL: 'http://commu.cafe24app.com',
+        baseURL: 'http://localhost:8001', 
+        //baseURL: 'http://commu.cafe24app.com',
     },
     // Global page headers: https://go.nuxtjs.dev/config-head
     // <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
@@ -43,6 +43,7 @@ export default {
     // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
     plugins: [
         '@/plugins/plugins.js',
+        '@/plugins/directives.js',
         {src:'@/plugins/tui-editor.js', ssr:false}
     ],
 

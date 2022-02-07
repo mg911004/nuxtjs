@@ -215,6 +215,7 @@
                 if(axios.data.code==200){
                     alert("등록되었습니다.");
                     this.데이터가져오기();
+                    this.댓글내용 = "";
                 }else{
                     alert("오류가 발생했습니다.");
                 }   

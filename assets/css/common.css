@@ -1,3 +1,6 @@
 .divide_line {border-left:1px solid #9E9E9E; margin:0 10px}
 .divider{border-bottom: 1px solid #EDEDED}
 .center{text-align: center;}
+
+.ls1{letter-spacing: -1px;}
+.ls2{letter-spacing: -2px;}

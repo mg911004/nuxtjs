@@ -2,12 +2,13 @@
     <div>
         <div class="card">
             <div class="card-content">
-                <div style="font-weight: bold;">즐겨찾기</div>    
+                <div style="font-weight: bold;" class="ls2">즐겨찾기</div>    
             </div>
         </div>
 
         <div class="card mt-3">
-            <table class="table is-fullwidth">
+            <!--pc-->
+            <table class="table is-fullwidth ls2 is-hidden-touch">
                 <thead>
                     <tr>
                         <th style="width: 4rem;">추천</th>
@@ -19,13 +20,25 @@
 
                 <tbody>
                     <tr @click="라우터이동('../view?bd_no='+item.bd_no)" style="cursor:pointer"  v-for="(item,i) in 데이터" :key="i">
-                        <th>1</th>
-                        <td>{{item.subject}}</td>
+                        <td>{{item.gets}}</td>
+                        <td>{{item.subject}} <span v-if="item.comments" style="color:#00D1B2"> [ {{item.comments}} ] </span></td>
                         <td>{{item.nickname}}</td>
-                        <td>{{item.reg_date | 시간표시변환}}</td>                     
+                        <td>{{item.reg_date | 시간표시변환}}</td>                  
                     </tr>
                 </tbody>
-            </table>                        
+            </table>   
+
+             <!--모바일-->
+            <table class="table is-fullwidth ls2 is-hidden-desktop">
+                <tbody>
+                    <tr @click="라우터이동('../view?bd_no='+item.bd_no)" style="cursor:pointer"  v-for="(item,i) in 데이터" :key="i">
+                        <td>
+                            {{item.subject}} <span v-if="item.comments" style="color:#00D1B2"> [ {{item.comments}} ] </span><br>
+                            {{item.nickname}} <span class="divide_line"></span>  {{item.reg_date | 시간표시변환}}
+                        </td>              
+                    </tr>
+                </tbody>
+            </table>                               
         </div>
         <v-pagination v-model="페이지" :length="페이지개수" :total-visible="7" color="#00D1B2" class="mt-5"></v-pagination>	
     </div>
