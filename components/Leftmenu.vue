@@ -112,13 +112,13 @@
                 }
 
 
-                //비회원 채팅 작성시 id => guest / nickname => guest+'ip맨뒷자리수'
+                //비회원 채팅 작성시 id => 손님 / nickname => 손님+'ip맨뒷자리수'
                 if(!this.유저아이디){
                     //ip 정보 받아오기
                     const axios = await this.$axios.get('https://api.ipify.org?format=json');
                     const ip = axios.data.ip.split('.')[3];
-                    param.id = "guest";
-                    param.nickname = "guest"+ip;
+                    param.id = "손님";
+                    param.nickname = "손님"+ip;
                 }
 
                 this.입력메시지 = '';                                  
