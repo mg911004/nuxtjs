@@ -1,4 +1,7 @@
 # 커뮤니티사이트  - 1인 프로젝트
+
+![index](https://user-images.githubusercontent.com/87694251/152955279-a60b9dad-6c36-4249-a376-5ec428e953ca.GIF)
+
 * 사이트 : [http://mg911004.site/](http://mg911004.site/)
 * 백엔드 : [https://github.com/mg911004/nodejs](https://github.com/mg911004/nodejs)  
 
