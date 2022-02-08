@@ -28,7 +28,11 @@
                 <tbody>
                     <tr @click="라우터이동('../view?bd_no='+item.bd_no)" style="cursor:pointer"  v-for="(item,i) in 데이터" :key="i">
                         <td>{{item.gets}}</td>
-                        <td>{{item.subject}} <span v-if="item.comments" style="color:#00D1B2"> [ {{item.comments}} ] </span></td>
+                        <td>
+                            {{item.subject}} 
+                            <img v-if="item.file" src="http://50.16.27.105:3001/imgicon.png" width="16" height="16"> 
+                            <span v-if="item.comments" style="color:#00D1B2"> [ {{item.comments}} ] </span>
+                        </td>
                         <td>{{item.nickname}}</td>
                         <td>{{item.reg_date | 시간표시변환}}</td>                  
                     </tr>

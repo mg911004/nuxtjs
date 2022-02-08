@@ -30,7 +30,7 @@
                         <td>{{item.gets}}</td>
                         <td>
                             {{item.subject}} 
-                            <img v-if="item.file" src="http://50.16.27.105:3001/1644306759246imgicon.png" width="16" height="16"> 
+                            <img v-if="item.file" src="http://50.16.27.105:3001/imgicon.png" width="16" height="16"> 
                             <span v-if="item.comments" style="color:#00D1B2"> [ {{item.comments}} ] </span>
                         </td>
                         <td>{{item.nickname}}</td>
