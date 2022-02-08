@@ -68,14 +68,28 @@
                 if(!this.제목){alert('제목을 입력해 주세요.'); return}
                 if(!this.$refs.내용.invoke('getMarkdown')){alert('내용을 입력해 주세요.'); return}
 
+                let imgChk = this.$refs.내용.invoke('getMarkdown').match(/\[addImage\]/g); 
+                if(imgChk != null) {
+                    if(imgChk.length>10){
+                        alert('이미지는 최대 10개까지만 첨부 가능합니다.');
+                        return;
+                    }
+                }
+
                 let param={        
                     'bd_no':this.$route.query.bd_no,
                     'id':this.유저아이디,
                     'nickname':this.유저닉네임,   
                     'category':this.분류,
                     'subject':this.제목,
-                    'content':this.$refs.내용.invoke('getMarkdown')
+                    'content':this.$refs.내용.invoke('getMarkdown'),
+                    'file': 0
                 }
+
+                if(imgChk != null){
+                    param.file = 1;
+                }
+
                 let axios = await this.$axios.post( '/modify',this.$qs.stringify(param));
                 if(axios.data.code==200){
                     this.라우터이동('../view', {bd_no:this.$route.query.bd_no});
