@@ -18,7 +18,7 @@
                     </div>
 
                     <div class="mt-3">
-                        <button @click="회원가입()" class="button is-light is-large mt-2" style="width: 100%;">가입하기</button>    
+                        <button @click="회원가입()" class="button is-primary is-large mt-2" style="width: 100%;">가입하기</button>    
                     </div> 
                 </div>
             </div>
