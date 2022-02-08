@@ -18,8 +18,7 @@
                     </div>
 
                     <div class="mt-3">
-                        <button class="button is-primary is-large" style="width: 100%;">로그인</button>
-                        <button @click="회원가입()" class="button is-light is-large mt-2" style="width: 100%;">회원가입</button>    
+                        <button @click="회원가입()" class="button is-light is-large mt-2" style="width: 100%;">가입하기</button>    
                     </div> 
                 </div>
             </div>
@@ -29,12 +28,6 @@
 
 <script>
     const mymixin = require('~/mixins/total.js'); 
-    //import Vue from 'vue';
-    //import qs from '~/plugins/plugins.js';
-    //Vue.use(qs);
-
-    //import VueCookies from 'vue-cookies';
-    //Vue.use(VueCookies);
 
     export default {  
         layout: 'noleft',
