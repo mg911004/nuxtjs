@@ -70,6 +70,7 @@
             }
         }, 
         async created (){
+            this.정렬 = this.$route.query.sort ? this.$route.query.sort : 'hot';
             this.데이터가져오기();
         },
         computed : {
@@ -85,8 +86,8 @@
                 }
             },
             리스트정렬(val){
+                this.페이지=1;
                 this.정렬 = val;            
-                //this.라우터이동(window.location.pathname.slice(1) , {sort: this.정렬});
                 this.라우터이동("" , {sort: this.정렬});
             },        
             async 데이터가져오기(){

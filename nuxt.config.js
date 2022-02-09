@@ -8,7 +8,7 @@ export default {
     },
     env: {
         listNumber : 13, //한 화면에 보여줄 데이터 수
-        imgUpLoadURL : 'http://50.16.27.105:3001' 
+        imgUpLoadURL : 'http://50.16.27.105:3001'  // 이미지 저장용 ec2 서버
     },
     axios: {
         //baseURL: 'http://localhost:8001', 

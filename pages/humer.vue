@@ -86,6 +86,7 @@
                 }
             },
             리스트정렬(val){
+                this.페이지=1;
                 this.정렬 = val;            
                 this.라우터이동("" , {sort: this.정렬});
             },        
