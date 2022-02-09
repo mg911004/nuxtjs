@@ -85,9 +85,9 @@
 
                 if(axios.data.code==200){
                     this.messages=axios.data.dbo;
-                }else {
-                    alert('오류가 발생했습니다.');
-                }	
+                }else{
+                    return;
+                }
 
                 // 채팅방 참여자 등록                  
                 this.pusher = new Pusher('407cb2ae1ebb455e1244', {
