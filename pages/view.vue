@@ -80,7 +80,6 @@
         mixins: [mymixin],
         data (){		
             return {	
-                테스트: 15000,
                 등록글정보 :{
                     bd_no : "",
                     id : "",
