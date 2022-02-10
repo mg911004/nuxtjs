@@ -63,7 +63,7 @@
 
     export default {  
         mixins: [mymixin],
-         data() {
+        data() {
             return{
                 messages: [],
                 channel : {},
