@@ -8,6 +8,7 @@ export default {
     },
     env: {
         listNumber : 13, //한 화면에 보여줄 데이터 수
+        ChatLimitNum : 20, //채팅방 입장시 처음으로 보여줄 채팅 수 제한
         imgUpLoadURL : 'http://50.16.27.105:3001'  // 이미지 저장용 ec2 서버
     },
     axios: {

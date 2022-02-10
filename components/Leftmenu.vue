@@ -68,8 +68,7 @@
                 messages: [],
                 channel : {},
                 pusher : {},
-                입력메시지:'',
-                ChatLimitNum : 15 //보여줄 갯수 채팅 최대 갯수
+                입력메시지:''
             }    
         },
         async mounted () {
@@ -79,7 +78,7 @@
             async 채팅방입장 (){
 
                 const param={
-                    'ChatLimitNum' : this.ChatLimitNum
+                    'ChatLimitNum' : process.env.ChatLimitNum
                 }         
                 const axios = await this.$axios.post('/chatSel',this.$qs.stringify(param));
 
