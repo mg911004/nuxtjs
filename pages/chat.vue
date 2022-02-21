@@ -29,6 +29,7 @@
     const mymixin = require('~/mixins/total.js'); 
 
     export default {  
+        layout: 'noleft',
         mixins: [mymixin],
         data() {
             return{
