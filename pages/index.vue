@@ -26,7 +26,7 @@
                 </thead>
 
                 <tbody>
-                    <tr @click="라우터이동('view?bd_no='+item.bd_no)" style="cursor:pointer"  v-for="(item,i) in 데이터" :key="i">
+                    <tr @click="라우터이동('view?bd_no='+item.bd_no)" style="cursor:pointer" :style="상단고정(item.nickname)"  v-for="(item,i) in 데이터" :key="i">
                         <td>{{item.gets}}</td>
                         <td>
                             {{item.subject}} 
@@ -42,7 +42,7 @@
              <!--모바일-->
             <table class="table is-fullwidth ls2 is-hidden-desktop">
                 <tbody>
-                    <tr @click="라우터이동('view?bd_no='+item.bd_no)" style="cursor:pointer"  v-for="(item,i) in 데이터" :key="i">
+                    <tr @click="라우터이동('view?bd_no='+item.bd_no)" style="cursor:pointer" :style="상단고정(item.nickname)" v-for="(item,i) in 데이터" :key="i">
                         <td>
                             {{item.subject}} <span v-if="item.comments" style="color:#00D1B2"> [ {{item.comments}} ] </span><br>
                             {{item.nickname}} <span class="divide_line"></span>  {{item.reg_date | 시간표시변환}}
@@ -74,12 +74,17 @@
             this.데이터가져오기();
         },
         computed : {
-            페이지개수 : function(){
+            페이지개수 (){
                 //listNumber 한 화면에 보여줄 데이터 수
                 return Math.ceil(this.데이터수/process.env.listNumber); 
-            },
+            }
         }, 
         methods : {	
+           상단고정(nickname){
+                if(nickname=='개발자'){
+                    return "color: #00D1B2"
+                }
+            },
             버튼색 (val){
                 if(this.정렬 ==val){
                     return "background-color: #00D1B2; color: #fff";
