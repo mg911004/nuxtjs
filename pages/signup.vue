@@ -1,7 +1,7 @@
 <template>
     <div> 
         <section class="section mt-6">
-            <div class="container">
+            <div class="card">
                 <h2 class="center" style="font-size:20px; margin-bottom:10px">회원가입</h2>
                 <div style="border: 1px solid #DEE1E4;" class="px-6 py-6">    
                     <div class="mt-2">
