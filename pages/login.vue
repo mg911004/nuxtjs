@@ -1,7 +1,7 @@
 <template>
     <div> 
         <section class="section mt-6">
-            <div class="container" style="width:550px;">
+            <div class="column is-half is-offset-one-quarter">
                 <div style="border: 1px solid #DEE1E4;" class="px-6 py-6">
                     <div class="pb-4 center"><img src="logo.png" ></div> 
         
