@@ -8,9 +8,20 @@
             </div>
         
             <div class="card-content divider">
-                <div class="content">
+
+                <!--pc-->
+                <div class="content is-hidden-touch">
                     <span>{{등록글정보.nickname}}</span> <span class="divide_line"></span> <span>{{등록글정보.reg_date | 시간표시변환}}</span>
                     <span style="float: right;">
+                        <span>조회 {{등록글정보.hits | 콤마표시}}</span> <span class="divide_line"></span> <span>댓글 {{등록글정보.comments | 콤마표시}}</span> <span class="divide_line"></span> <span>추천 {{등록글정보.gets | 콤마표시}}</span>
+                    </span>    
+                </div>
+                
+                <!--모바일-->
+                <div class="content is-hidden-desktop">
+                    <span>{{등록글정보.nickname}}</span> <span class="divide_line"></span> <span>{{등록글정보.reg_date | 시간표시변환}}</span>
+                    <br>
+                    <span>
                         <span>조회 {{등록글정보.hits | 콤마표시}}</span> <span class="divide_line"></span> <span>댓글 {{등록글정보.comments | 콤마표시}}</span> <span class="divide_line"></span> <span>추천 {{등록글정보.gets | 콤마표시}}</span>
                     </span>    
                 </div>
