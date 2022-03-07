@@ -3,7 +3,7 @@
         <section class="section mt-6">
             <div class="column is-half is-offset-one-quarter">
                 <h2 class="center" style="font-size:20px; margin-bottom:10px">회원가입</h2>
-                <div style="border: 1px solid #DEE1E4;" class="px-6 py-6">    
+                <div style="border: 1px solid #DEE1E4;" class="px-2 py-6">    
                     <div class="mt-2">
                         <input v-model="아이디" class="input is-primary is-large" type="text" placeholder="아이디" maxlength="15">
                     </div>

@@ -2,7 +2,7 @@
     <div> 
         <section class="section mt-6">
             <div class="column is-half is-offset-one-quarter">
-                <div style="border: 1px solid #DEE1E4;" class="px-6 py-6">
+                <div style="border: 1px solid #DEE1E4;" class="px-2 py-6">
                     <div class="pb-4 center"><img src="logo.png" ></div> 
         
                     <div class="mt-2">
