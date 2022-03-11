@@ -40,6 +40,7 @@
             }    
         },
         async mounted () {
+            this.아이피입력();
             this.채팅방입장();     
         },  
         methods : {	
@@ -90,6 +91,19 @@
 
                 this.입력메시지 = '';                                  
                 await this.$axios.post('/chatWrite',this.$qs.stringify(param));     
+            },
+            async 아이피입력(){
+                //ip 정보 받아오기
+                const axios = await this.$axios.get('https://api.ipify.org?format=json');
+			    const ip = axios.data.ip
+                //
+
+                const param={
+                    'bd_no':0,
+                    'id' : "chat",
+                    'ip' : ip
+                }
+               await this.$axios.post( '/hitsUp',this.$qs.stringify(param)); 
             }
         }
     }

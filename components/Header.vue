@@ -24,6 +24,9 @@
                             <a class="navbar-item" @click="라우터이동('/mybookmark')">즐겨찾기</a>
                         </div>
                     </div>
+                    <div class="navbar-item">
+                        <a class="navbar-link" @click="라우터이동('/chat')">채팅</a>
+                    </div>
                     <div class="navbar-item has-dropdown is-hoverable">
                         <a class="navbar-link">커뮤니티</a>
                         <div class="navbar-dropdown">

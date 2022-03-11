@@ -74,6 +74,7 @@
         async created (){
             this.정렬 = this.$route.query.sort ? this.$route.query.sort : 'hot';
             this.데이터가져오기();
+            this.아이피입력();
         },
         computed : {
             페이지개수 (){
@@ -112,7 +113,20 @@
                 }else{
                     alert("오류가 발생했습니다.");
                 }     
-            }
+            },
+            async 아이피입력(){
+                //ip 정보 받아오기
+                const axios = await this.$axios.get('https://api.ipify.org?format=json');
+			    const ip = axios.data.ip
+                //
+
+                const param={
+                    'bd_no':0,
+                    'id' : "free",
+                    'ip' : ip
+                }
+                await this.$axios.post( '/hitsUp',this.$qs.stringify(param)); 
+            }             
         },
         watch : {
             정렬 (){
