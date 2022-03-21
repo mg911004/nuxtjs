@@ -4,7 +4,7 @@
             <!-- 채팅구역 -->
             <div class="card mt-4 pl-1 pr-1 ls2">
                 <nav class="panel is-primary">
-                    <p class="panel-heading" style="font-size:15px">채팅</p>
+                    <p class="panel-heading" style="font-size:15px">전체채팅</p>
                     <div class="panel-block" v-autobottom="true" style="hoverflow-y:scroll;">
                         <div>
                             <div v-for="(item,i) in messages" :key="i">
